@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>loading</title>
+  <style>
+    body{
+      height:100vh;
+      background: #e9e3de;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+    .box{
+      height:200px;
+      width:200px;
+      box-sizing: border-box;
+      position: relative;
+      border-radius: 50%;
+      border-top:15px solid #ce828c;
+      font-size: 20px;
+      color: black;
+      line-height: 200px;
+      text-align: center;
+      animation: ani1 1.5s linear infinite;
+    }
+    .box span{
+      position: absolute;
+      display: block;
+      width:200px;
+      height:200px;
+      line-height: 200px;
+      text-align: center;
+      animation: ani2 1.5s linear infinite;
+
+    }
+    .box::before,.box::after{
+      content:'';
+      height:200px;
+      width:200px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      position:absolute;
+      left:0;
+      top:-15px;
+    }
+    .box::before{
+      border-top:15px solid #ddc4a6 ;
+      transform: rotate(120deg);
+    }
+    .box::after{
+      border-top:15px solid #a6687b ;
+      transform: rotate(240deg);
+    }
+    @keyframes ani1 {
+      to{
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes ani2 {
+      to{
+        transform: rotate(-360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"><span>Loading...</span></div>
+</body>
+</html>
